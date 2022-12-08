@@ -24,7 +24,10 @@ launchctl remove gui/501/com.apple.XProtect.agent.scan
 sudo launchctl remove system/com.apple.XprotectFramework.PluginService
 sudo launchctl remove gui/501/com.apple.XprotectFramework.PluginService
 
-
+# dot files, text
+defaults write ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist \
+  LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=com.sublimetext.4;}' \
+  '{LSHandlerContentType=public.unix-executable;LSHandlerRoleAll=com.sublimetext.4;}'
 
 #xcode speed up
 defaults write com.apple.dt.XCBuild EnableSwiftBuildSystemIntegration 1
